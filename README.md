@@ -53,16 +53,16 @@ or
 sudo dpkg --purge simple-viewer
 ```
 
-### Snap
-Download the latest `.snap` from the [Releases page](https://github.com/ethan-mccall/simple-viewer/releases) and run:
+#### Snap
 ```bash
-sudo snap install simple-viewer_1.0_amd64.snap --dangerous
+sudo snap install simple-viewer
+or
+sudo snap refresh simple-viewer
 ```
-><h6>snap currently waiting in manual review.
 
 To uninstall `.snap`, run:
 ```bash
 sudo snap remove simple-viewer
 or
-sudo snap remove --purge fsimple-viewer
+sudo snap remove --purge simple-viewer
 ```
