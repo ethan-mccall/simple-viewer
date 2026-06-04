@@ -2,7 +2,7 @@
 
 **A lightweight, modern, and distraction-free image viewer with super easy crop, and other edit features.**
 
-![Platform](https://img.shields.io/badge/Platform-Linux%20%20%7C%20macOS-orange.svg)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%20-orange.svg)
 ![License](https://img.shields.io/badge/License-GPLv3-9C1C1C.svg)
 ![Release](https://img.shields.io/github/v/release/ethan-mccall/simple-viewer?color=4CAF50)
 
