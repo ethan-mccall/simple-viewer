@@ -33,36 +33,31 @@
 ## 📥 Downloads & Installation
 
 ### Debian / Ubuntu
-
-Download the latest `.deb` from the [Releases page](https://github.com/ethan-mccall/simple-viewer/releases) and run:
-
 ```bash
+# Install
 sudo dpkg -i simple-viewer_*.deb
 sudo apt install -f
-```
-To update an existing `.deb`, run:
-```bash
+
+# Update
 wget https://github.com/ethan-mccall/simple-viewer/releases/latest/download/simple-viewer_1.0_amd64.deb
 sudo dpkg -i simple-viewer_*.deb
 sudo apt install -f
-```
-To uninstall `.deb`, run:
-```bash
+
+# Uninstall
 sudo dpkg -r simple-viewer
-or
+# or fully remove config files too:
 sudo dpkg --purge simple-viewer
 ```
 
 #### Snap
 ```bash
+# Install / Update
 sudo snap install simple-viewer
-or
+# or
 sudo snap refresh simple-viewer
-```
 
-To uninstall `.snap`, run:
-```bash
+# Uninstall
 sudo snap remove simple-viewer
-or
+# or fully purge:
 sudo snap remove --purge simple-viewer
 ```
