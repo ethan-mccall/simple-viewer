@@ -33,6 +33,7 @@
 ## 📥 Downloads & Installation
 
 ### Debian / Ubuntu
+Download the latest `.deb` from the [Releases page](https://github.com/ethan-mccall/simple-viewer/releases) and run:
 ```bash
 # Install
 sudo dpkg -i simple-viewer_*.deb
