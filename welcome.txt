@@ -1,0 +1,24 @@
+<h2 style="margin: 0 0 8px 0;">Simple Viewer</h2>
+
+
+<p style="margin: 4px 0; color: #cccccc;">
+<b>Ctrl+O</b> = Open Image<br/>
+</p>
+
+<p style="margin: 8px 0 4px 0; color: #dddddd;">
+<b>Left or Middle Click + Drag</b> = Move Image Anywhere<br/>
+<b>Mouse Wheel</b> or <b>Ctrl++ / Ctrl+-</b> = Zoom<br/>
+<b>Double-Click</b> or <b>F</b> = Fit Image to Window
+</p>
+
+<p style="margin: 8px 0 4px 0; color: #dddddd;">
+<b>Right Click</b> = Context Menu<br/>
+<b>Left / Right Arrows</b> = Previous / Next Image in Folder<br/>
+<b>F11</b> = Full Screen
+</p>
+
+<p style="margin: 8px 0 4px 0; color: #cccccc;">
+<b>Right Click + Drag</b> = Draw Crop Rectangle<br/>
+<b>Esc</b> = Cancel Crop<br/>
+<b>Space</b> or <b>P</b> = Pause/Play Animation
+</p>

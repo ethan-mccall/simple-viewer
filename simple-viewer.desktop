@@ -1,0 +1,20 @@
+# This is the template .desktop file for installed releases.
+# After `cmake --install`, SimpleViewer should be in $PATH (e.g. /usr/local/bin or ~/.local/bin),
+# and the icon will be registered in the hicolor theme under the name "simple-viewer".
+# Exec uses the bare name because it will be found via PATH.
+# For development without installing, use/copy build/.../simple-viewer-dev.desktop instead
+# (it contains absolute paths to the just-built binary and icon).
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Simple Viewer
+GenericName=Image Viewer
+Comment=Lightweight image viewer with crop, transforms, and folder navigation
+Exec=SimpleViewer %F
+Icon=simple-viewer
+Terminal=false
+Categories=Graphics;Viewer;Photography;
+MimeType=image/bmp;image/gif;image/jpeg;image/png;image/tiff;image/x-tga;image/webp;image/svg+xml;image/x-icon;image/heic;image/heif;image/avif;image/x-icns;
+StartupNotify=true
+StartupWMClass=SimpleViewer
+Actions=

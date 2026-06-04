@@ -1,0 +1,78 @@
+name: simple-viewer
+version: '1.0'
+
+title: Simple Viewer
+summary: Lightweight image viewer
+description: |
+  A lightweight, modern, and distraction-free image viewer with super easy crop, and other edit features.
+icon: snap/gui/simple-viewer.png
+
+source-code: https://github.com/ethan-mccall/simple-viewer
+issues: https://github.com/ethan-mccall/simple-viewer/issues
+donation: https://buymeacoffee.com/ethan_mccall
+
+grade: stable
+confinement: strict
+base: core24
+license: GPL-3.0+
+
+apps:
+  simple-viewer:
+    command: usr/bin/SimpleViewer
+    desktop: usr/share/applications/simple-viewer.desktop
+    extensions:
+      - kde-neon-6
+    plugs:
+      - desktop
+      - desktop-legacy
+      - wayland
+      - x11
+      - opengl
+      - home
+      - removable-media
+      - gsettings
+    environment:
+      QT_QPA_PLATFORM: xcb
+      QT_DEBUG_PLUGINS: 0
+      XDG_RUNTIME_DIR: $SNAP_USER_DATA/runtime
+      LD_LIBRARY_PATH: $SNAP/usr/lib/x86_64-linux-gnu:$SNAP/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+      SESSION_MANAGER: ""
+
+parts:
+  simple-viewer:
+    plugin: cmake
+    source: .
+    cmake-generator: Ninja
+    cmake-parameters:
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DDEPLOY_QT_RUNTIME=OFF
+    build-packages:
+      - build-essential
+      - cmake
+      - ninja-build
+    stage-packages:
+      - librsvg2-common
+      - gsettings-desktop-schemas
+      - breeze
+
+    override-build: |
+      craftctl default
+
+      mkdir -p $CRAFT_PART_INSTALL/usr/share/applications
+      cp $CRAFT_PART_SRC/simple-viewer.desktop $CRAFT_PART_INSTALL/usr/share/applications/simple-viewer.desktop || true
+
+      for size in 48 64 128 256; do
+        mkdir -p $CRAFT_PART_INSTALL/usr/share/icons/hicolor/${size}x${size}/apps
+        cp $CRAFT_PART_SRC/snap/gui/simple-viewer.png $CRAFT_PART_INSTALL/usr/share/icons/hicolor/${size}x${size}/apps/simple-viewer.png || true
+      done
+
+      mkdir -p $CRAFT_PART_INSTALL/snap/gui
+      cp $CRAFT_PART_SRC/snap/gui/simple-viewer.png $CRAFT_PART_INSTALL/snap/gui/simple-viewer.png || true
+      cp $CRAFT_PART_SRC/snap/gui/simple-viewer.png $CRAFT_PART_INSTALL/snap/gui/icon.png || true
+
+lint:
+  ignore:
+    - metadata:
+      - contact
+      - website
